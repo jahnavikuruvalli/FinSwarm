@@ -1,191 +1,199 @@
-🟦 FinSwarm
-FinSwarm is an AI-powered, goal-driven financial learning and decision-intelligence system.
+# FinSwarm
 
-FinSwarm is an AI-powered financial decision intelligence platform that helps first-time investors understand financial options and risks — without giving financial advice or handling money.
+**FinSwarm** is an AI-powered, goal-driven financial learning and decision-intelligence platform built for **financial inclusion, transparency, and education**.
 
-Built with Responsible AI, transparency, and financial inclusion at its core.
+It helps users **learn how to think about financial decisions**, not what decisions to make.
 
-🚀 Why FinSwarm?
+> 🚫 No advice.  
+> 🚫 No predictions.  
+> 🚫 No money handling.  
 
-Millions of new retail investors enter financial markets without understanding:
+This repository contains the **locked MVP implementation** for **Microsoft Imagine Cup 2026**.
 
- - What investment options mean
+---
 
- - What risks they carry
+## 🔍 What Problem FinSwarm Solves
 
- - How people like them typically reason before investing
+Most beginners struggle with:
+- Financial jargon
+- Hidden risks
+- Misconceptions
+- Knowing *what to learn next*
+
+FinSwarm solves this by:
+- Creating **time-bound learning roadmaps**
+- Teaching concepts in **simple, explainable language**
+- Proactively surfacing **insights and misconceptions**
+- Maintaining **strict safety and policy boundaries**
+
+---
+
+## 🎯 What FinSwarm Does (MVP Scope)
 
- - Most platforms either:
+### ✅ It DOES
+- Create a **personalized financial learning plan**
+- Teach concepts via **chat-based tutoring**
+- Track learning progress and phases
+- Push **proactive insights** like:
+  - Concept connections
+  - Common misconceptions
+  - “You should understand this now” prompts
+- Provide **source-backed explanations** (RBI, SEBI, textbooks)
 
- - Give opaque recommendations, or
+### ❌ It DOES NOT
+- Recommend investments
+- Predict markets or returns
+- Show charts or price data
+- Track or execute financial actions
+- Give financial advice
 
- - Assume prior financial knowledge
+This scope is **intentional and judge-safe**.
 
-FinSwarm bridges this gap by explaining investment concepts and risks in clear, human language, enabling users to make informed decisions on their own.
+---
 
-🎯 Hackathon Scope (Strict MVP)
-✅ What FinSwarm DOES
+## 🧠 Core User Flow
 
-•	Creates a time-bound financial learning plan
-•	Explains concepts with:
-o	Simple language
-o	Analogies
-o	Sources (proof)
-•	Tracks learning state
-•	Proactively surfaces:
-o	Misconceptions
-o	Concept connections
-o	“You should know this now” insights
+1. User sets:
+   - Financial learning goal
+   - Duration (weeks / months)
+2. System generates:
+   - Phase-wise learning roadmap
+3. User learns via chat
+4. System:
+   - Tracks progress
+   - Pushes proactive insights asynchronously
 
+> Chat is the **interface**, not the product.
 
-🧑‍💼 User Scenario (Judge-Friendly)
+---
 
-User: Beginner investor
-Query:
+## 🧩 Multi-Agent Architecture (MVP)
 
-“I want to invest ₹10,000 for long-term stability. What should I understand before choosing?”
+### Agents Used
 
-FinSwarm Responds With:
+1. **Orchestrator Agent**
+   - Controls end-to-end flow
+   - Enforces safety rules
+   - Calls all other agents
 
- - High-level market overview
+2. **Goal Planner Agent**
+   - Inputs: Goal + Duration
+   - Outputs: Phase-wise learning plan
 
- - Common low-risk investment categories
+3. **Curriculum Builder Agent**
+   - Breaks phases into learning units
+   - Defines concept dependencies
 
- - Risk explanations (volatility, time horizon, uncertainty)
+4. **Knowledge Agent (RAG)**
+   - Azure AI Search + Azure OpenAI
+   - Retrieves explanations and sources
 
- - Educational breakdown of financial terms
+5. **Tutor Agent**
+   - Converts knowledge into beginner-friendly lessons
+   - Uses analogies and step-by-step reasoning
 
- - How beginners typically think through such decisions
+6. **Proactive Insight Agent**
+   - Pushes contextual insights based on:
+     - Learning stage
+     - Chat history
+     - Common confusion patterns
 
-➡️ The user learns how to think, not what to buy.
-
-🧠 How It Works — Agentic AI Architecture
-
-FinSwarm uses a multi-agent AI system designed for safety, explainability, and responsibility.
-
-🧩 Agent System
-
-Strategy Agent (Orchestrator)
-
- - Controls conversation flow
-
- - Enforces Responsible AI constraints
-
- - Decides which agents to invoke
-
- - Market Knowledge Agent (RAG-based)
-
- - Uses curated financial education content
-
- - Reads public, non-opinionated market summaries
-
- - Powered by Azure AI Search
-
- - Risk Reasoning Agent
-
- - Uses simple ML + heuristics
-
-Explains:
-
- - Time horizon risk
-
- - Volatility risk
-
- - Beginner-risk mismatch
-
- - Tutor Agent
-
- - Converts analysis into:
-
- - Simple language
-
- - Analogies
-
- - Step-by-step explanations
-
- - Governance Layer (Hard Constraints)
-
- - Blocks recommendations
-
- - Blocks price targets
-
- - Blocks execution steps
-
-🧱 Microsoft Azure Tech Stack
-
-FinSwarm is built on Microsoft technologies.
-
- - Azure OpenAI → All AI agents
-
- - Azure AI Search → Retrieval-Augmented Generation (RAG)
-
- - Azure Machine Learning → Risk scoring & heuristics
-
- - Azure Functions → Agent orchestration
-
- - Azure SQL / Cosmos DB → User state & session data
-
- - Power BI / Lightweight Dashboard → Explainability & reasoning visualization
-
-Designed using Microsoft Responsible AI principles by default.
-
-🏦 Financial Services Category Alignment
-
-✔ Financial inclusion for beginners
-✔ Trust & transparency
-✔ Explainable AI
-✔ Responsible agentic systems
-✔ Scalable to institutions (education-first tooling)
-
-FinSwarm does not compete with banks —
-It empowers users to engage with financial systems responsibly.
-
-🗓️ MVP Development Plan 
-
-Phase 1: Scope Lock 
-
- - Single persona
-
- - Single use case
-
- - Feature freeze
-
-Phase 2: Architecture & Data 
-
- - Azure OpenAI setup
-
- - Azure AI Search
-
- - Clean educational RAG dataset
-
-Phase 3: Agent System 
-
- - Strategy Agent
-
- - Risk Agent
-
- - Tutor Agent
-
- - Safety constraints enforced
-
-Phase 4: Frontend MVP 
-
- - Simple web UI
-
- - Chat interface
-
- - Reasoning panels
-
-Phase 5: Polish & Pitch 
-
- - Demo-ready flow
-
- - Architecture diagram
-
- - Impact narrative
-
-
-📜 Disclaimer
+7. **Safety & Policy Agent**
+   - Blocks advice, predictions, and execution language
+
+---
+
+## 🔄 End-to-End Flow
+
+```text
+User Goal
+   ↓
+Goal Planner Agent
+   ↓
+Curriculum Builder
+   ↓
+Learning Roadmap (DB)
+   ↓
+User Chat
+   ↓
+Orchestrator
+   ├── Knowledge Agent (RAG)
+   ├── Tutor Agent
+   ├── Tutor Agent
+   ├── Safety Agent
+   └── Proactive Insight Agent (async)
+   ↓
+Frontend Insight Cards
+```
+
+
+---
+
+## 🖥️ Frontend (MVP)
+
+**Three-screen design only**
+
+### 1. Goal Setup
+- Goal input
+- Duration selector
+
+### 2. Learning Dashboard
+- **Left:** Learning roadmap
+- **Center:** Chat interface
+- **Right:** Proactive insights (key differentiator)
+
+Each insight card includes:
+- Explanation
+- Source link
+- “Ask more” CTA
+
+---
+
+## 🗄️ Minimal Database Schema
+
+- **User**
+- **Goal**
+- **Learning State**
+- **Chat History**
+- **Insight Log**
+
+Designed for clarity and continuity, not analytics bloat.
+
+---
+
+## ☁️ Microsoft Tech Stack
+
+- **Azure OpenAI** → All agents
+- **Azure AI Search** → RAG pipeline
+- **Azure Functions** → Orchestration
+- **Azure Machine Learning** → Risk logic
+- **Azure SQL / Cosmos DB** → State storage
+- **Next.js** → Frontend
+- **Vercel / Azure Static Web Apps** → Hosting
+
+
+---
+
+## 📁 Repository Structure
+
+```yaml
+frontend/
+orchestrator/
+agents/
+  goal_planner/
+  curriculum_builder/
+  knowledge/
+  tutor/
+  proactive/
+  safety/
+data/
+  docs/
+  schemas/
+```
+
+---
+
+## 📜 Disclaimer
 
 FinSwarm is not a financial advisor.
 It provides educational decision support only and does not offer investment advice, recommendations, or execution capabilities.
