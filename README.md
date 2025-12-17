@@ -1,5 +1,5 @@
 🟦 FinSwarm
-AI-Powered Financial Decision Intelligence for Beginner Investors
+FinSwarm is an AI-powered, goal-driven financial learning and decision-intelligence system.
 
 FinSwarm is an AI-powered financial decision intelligence platform that helps first-time investors understand financial options and risks — without giving financial advice or handling money.
 
@@ -26,15 +26,16 @@ FinSwarm bridges this gap by explaining investment concepts and risks in clear, 
 🎯 Hackathon Scope (Strict MVP)
 ✅ What FinSwarm DOES
 
- - Helps beginner investors understand financial options
-
- - Explains risk factors (time horizon, volatility, uncertainty)
-
- - Breaks down financial terms into simple explanations
-
- - Shows reasoning, not conclusions
-
- - Educates users while analyzing their question
+•	Creates a time-bound financial learning plan
+•	Explains concepts with:
+o	Simple language
+o	Analogies
+o	Sources (proof)
+•	Tracks learning state
+•	Proactively surfaces:
+o	Misconceptions
+o	Concept connections
+o	“You should know this now” insights
 
 
 🧑‍💼 User Scenario (Judge-Friendly)
